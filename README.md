@@ -1,4 +1,4 @@
-# TallyConnector-V2.0
+![image](https://github.com/user-attachments/assets/bbd5baf6-2d57-4f14-b490-373584a41c31)# TallyConnector-V2.0
 The TDL Helps to Get Around 75 % of the Data in Tally to Excel in quick seconds in 3 Tables
 
 
@@ -6,7 +6,9 @@ The TDL Helps to Get Around 75 % of the Data in Tally to Excel in quick seconds 
 
 ***Click to download the Connector from Here***
 
-https://workdrive.zohoexternal.com/external/8fb8315cec93c88ac25c12fee952e19aab501f47fcc1453d710a070abe21bfd8
+https://techca.app/viewtopic.php?t=29
+
+
 
 # Tally-Excel- PowerBI- Power Query ODBC Connector
 
@@ -24,7 +26,8 @@ or Press Ctl + Alt + T in Gateway of Tally Menu
 
 Then Press F4 and Paste the path and select the Connection.tcp File
 
-![image](https://github.com/ramajayam-CA/Tally-Connector/assets/12751693/39f65fa3-8369-4611-82a9-2b799a367f18)
+![image](https://github.com/user-attachments/assets/da0a9949-3475-4af2-bd8c-439e541bb93d)
+
 
 **Step 3** **Enabling ODBC in Tally**
 
@@ -59,7 +62,12 @@ Port : 9000 or any other port of your choice
 
 ![image](https://github.com/ramajayam-CA/Tally-Connector/assets/12751693/1a3de0f6-4156-4cc1-8722-ec969b1807b1)
 
-    
+
+Refer to the Following link if Microsoft query is not appearing
+
+https://answers.microsoft.com/en-us/msoffice/forum/all/microsoft-query-missing-in-excel-365-how-to-solve/17ce69ec-e8e4-4921-905c-e9c0a6f4b0f2
+
+
 **Step 5** 
 
 **Selecting the Table in the tally database**
@@ -72,7 +80,8 @@ Port : 9000 or any other port of your choice
 After Selecting press the > button to load all the fields or the selected field 
 Then Click **Next** 3 times And finally Click Finish so that the data loaded in Excel 
 
-![image](https://github.com/ramajayam-CA/Tally-Connector/assets/12751693/fe6c55f8-05b0-4a6a-b069-93ff47ea2315)
+![image](https://github.com/user-attachments/assets/43a4762f-7428-468b-95a1-78ad94db3f9f)
+
 
 ![image](https://github.com/ramajayam-CA/Tally-Connector/assets/12751693/6756dfcb-e186-41dc-a17c-8f06327a16af)
 
@@ -114,14 +123,16 @@ Tally Definition Language (TDL) is the development language of Tally Products. T
 11. There are many further Benifits being explored by the Author
 
 
-# Fields Present in the Ledger Table
+# Fields Present in the Ledger Table 
 
-![image](https://github.com/ramajayam-CA/Tally-Connector/assets/12751693/993555b3-d60d-430e-8dee-ed1ab10a7263)
+![image](https://github.com/user-attachments/assets/cb7e33b8-0975-48f3-9d60-4b1f179ecf4c)
 
 
-# Fields Present in the Transaction Table.
 
-![image](https://github.com/ramajayam-CA/Tally-Connector/assets/12751693/536a3c9b-f271-4907-820c-50cee2853415)
+# Fields Present in the Transaction Table. - Daybook
+
+![image](https://github.com/user-attachments/assets/64f3a1bb-e1a6-405b-b822-d939969d2e4e)
+
 
 
 
@@ -139,15 +150,16 @@ https://help.tallysolutions.com/tally-prime/data-exchange-tally-prime/extracting
 # Important Queries from the above data source - Transactions
 
 
-SELECT $Key, $MasterId, $AlterID, $VoucherNumber, $Date, $VoucherTypeName, $_Narration, $Reference, $ReferenceDate, $IsDeemedPositive, $NatureOfVoucher, $HasCashFlow, $EnteredBy, $AlteredBy, $AlteredOn, $SUpdatedDate, $SUpdatedTime, $LedgerName, $Amount, $DrAmount, $CrAmount, $Ledger_Parent, $Ledger_PrimaryGroup, $Party_LedgerName, $PARTY_GST_number, $Ledger_Master_GST_Number, $LedgerMasterGSTINGSTINtype, $HasBankEntry, $RComp_Name, $Year_Selected_from, $Year_Selected_to, $Company_number, $Led_Master_id, $Led_Alter_Id, $Led_IS_Revenue, $Path_of_the_CurrentCompany 
-FROM A_Sirc_Vourcher7_1
+SELECT $Key, $MasterId, $AlterID, $VoucherNumber, $Date, $VoucherTypeName, $Led_Lineno, $Type, $LedgerName, $Amount, $Led_Parent, $Led_Group, $Party_LedName, $Vch_GSTIN, $Led_GSTIN, $Party_GST_Type, $GST_Classification, $Narration, $EnteredBy, $LastEventinVoucher, $UpdatedDate, $UpdatedTime, $Nature_Led, $Led_MID, $CompanyName, $Year_from, $Year_to, $Company_number, $Path
+FROM A__DayBook
 
 
 # Important Queries from the above data source - Master data - Ledger
 
 
-SELECT $Name, $_PrimaryGroup, $Parent, $OpeningBalance, $ClosingBalance, $_PrevYearBalance, $IsRevenue, $PartyGSTIN, $MasterId, $alteridd, $RComp_Name, $Year_Selected_from, $Year_Selected_to, $Company_number, $Path
-FROM A_Sirc_Leder_Detailed_7_1
+SELECT $Name, $_PrimaryGroup, $Parent, $OpeningBalance, $ClosingBalance, $_PrevYearBalance, $IsRevenue, $PartyGSTIN, $MasterId, $AlterID, $Nature_Led, $UpdatedDate, $UpdatedTime, $CreatedBy, $CreatedDate, $AlteredDate, $AlteredBy, $LastVoucherDate, $CompanyName, $Year_from, $Year_to, $Company_number, $Path
+FROM A__M_Ledger
+
 
 # Get the List of ledgers with forensics data
 
