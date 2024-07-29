@@ -1,7 +1,7 @@
-![image](https://github.com/user-attachments/assets/bbd5baf6-2d57-4f14-b490-373584a41c31)# TallyConnector-V2.0
+# TallyConnector-V2.0
+
+
 The TDL Helps to Get Around 75 % of the Data in Tally to Excel in quick seconds in 3 Tables
-
-
 
 
 ***Click to download the Connector from Here***
